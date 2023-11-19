@@ -5,13 +5,35 @@ import BaseMenu from "~/components/layout/BaseMenu/BaseMenu.vue";
   <div>
     <div></div>
     <BaseMenu class="sticky top-0"/>
-    <main class="grid grid-cols-12 auto-rows-auto	">
-      <div class="col-start-1 col-end-3"></div>
-      <div>
+    <main class="layout-base">
+      <div class="layout-left">ddd</div>
+      <div class="layout-middle">
         <slot></slot>
       </div>
-      <div class="col-start-9 col-end-12"></div>
+      <div class="layout-right">
+        aaa
+      </div>
     </main>
     <div>footer</div>
   </div>
 </template>
+
+<style scoped lang="scss">
+@import "@/assets/scss/layout-base";
+
+.layout-base {
+  @include layoutBaseContainer();
+}
+
+.layout-left {
+  @include layoutBaseLeft();
+}
+
+.layout-right {
+  @include layoutBaseRight();
+}
+
+.layout-middle {
+  @include layoutBaseMiddle();
+}
+</style>

@@ -55,6 +55,9 @@ export default {
                         fontWeight: '500',
                     },
                 ]
+            },
+            screens: {
+                'xs': '400px',
             }
         },
     },

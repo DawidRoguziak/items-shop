@@ -1,0 +1,15 @@
+@mixin layoutBaseContainer {
+  @apply flex w-full xs:px-2;
+}
+
+@mixin layoutBaseLeft {
+  @apply md:w-3/12 sm:w-1/12 max-xs:w-0;
+}
+
+@mixin layoutBaseRight {
+  @apply md:w-3/12 sm:w-1/12 max-xs:w-0;
+}
+
+@mixin layoutBaseMiddle {
+  @apply md:w-6/12 sm:w-10/12 max-xs:w-full;
+}
