@@ -42,6 +42,19 @@ export default {
                     800: "#173B1A",
                     900: "#002603",
                 }
+            },
+            fontSize: {
+                base: ['1rem', {
+                    lineHeight: '1.5rem',
+                    fontWeight: '500',
+                }],
+                md: [
+                    '1.150rem',
+                    {
+                        lineHeight: '1.20rem',
+                        fontWeight: '500',
+                    },
+                ]
             }
         },
     },

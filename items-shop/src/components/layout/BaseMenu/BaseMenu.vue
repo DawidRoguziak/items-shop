@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<div>
+<div class="bg-shopGray-800 text-white py-[16px] text-md ">
   baseMenu
 </div>
 </template>
