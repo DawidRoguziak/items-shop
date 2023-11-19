@@ -6,13 +6,11 @@ import BaseMenu from "~/components/layout/BaseMenu/BaseMenu.vue";
     <div></div>
     <BaseMenu class="sticky top-0"/>
     <main class="layout-base">
-      <div class="layout-left">ddd</div>
+      <div class="layout-left"></div>
       <div class="layout-middle">
         <slot></slot>
       </div>
-      <div class="layout-right">
-        aaa
-      </div>
+      <div class="layout-right"></div>
     </main>
     <div>footer</div>
   </div>

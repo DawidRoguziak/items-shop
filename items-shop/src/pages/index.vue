@@ -3,6 +3,7 @@
 import useGetApiLink from '~/composables/useGetApiLink';
 import type {Product} from "../../../types/Product";
 import type {BaseApiListResponse} from "../../../types/BaseApiListResponse";
+import UiButtonDropdown from "~/components/ui/UiButtonDropdown/UiButtonDropdown.vue";
 
 const products = ref<Product[]>([]);
 
@@ -13,6 +14,8 @@ const products = ref<Product[]>([]);
 <template>
   <div>
     home
-    {{ data}}
+    <UiButtonDropdown :options="['a','b','c','d','e']" >
+      button
+    </UiButtonDropdown>
   </div>
 </template>

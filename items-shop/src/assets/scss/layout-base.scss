@@ -1,5 +1,5 @@
 @mixin layoutBaseContainer {
-  @apply flex w-full xs:px-2;
+  @apply flex w-full max-xs:px-2;
 }
 
 @mixin layoutBaseLeft {
