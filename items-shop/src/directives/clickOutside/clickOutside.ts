@@ -1,8 +1,13 @@
-import type {Directive} from "vue";
+import type {Directive, DirectiveBinding} from "vue";
 
-export const vClickOutside: Directive<HTMLElement & { __ClickOutside: Function }, Function> = {
-    mounted(el, binding) {
-        el.__ClickOutside = (html: HTMLElement, event: MouseEvent) => {
+interface HTMLElementWithClickOutside extends HTMLElement {
+    __ClickOutside: (event: MouseEvent) => void;
+}
+
+
+export const vClickOutside: Directive<HTMLElementWithClickOutside, Function> = {
+    mounted(el: HTMLElementWithClickOutside, binding: DirectiveBinding<Function>) {
+        el.__ClickOutside = (event: MouseEvent) => {
             if (!event.target) {
                 return;
             }
@@ -11,10 +16,13 @@ export const vClickOutside: Directive<HTMLElement & { __ClickOutside: Function }
                 binding.value(event)
             }
         }
+
         document.body.addEventListener('click', el.__ClickOutside)
     },
     unmounted(el) {
         document.body.removeEventListener('click', el.__ClickOutside)
-        el.__ClickOutside = () => {};
+
+        el.__ClickOutside = () => {
+        };
     }
 }

@@ -14,8 +14,5 @@ const products = ref<Product[]>([]);
 <template>
   <div>
     home
-    <UiButtonDropdown :options="['a','b','c','d','e']" >
-      button
-    </UiButtonDropdown>
   </div>
 </template>
