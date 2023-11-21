@@ -1,43 +1,9 @@
 <script setup lang="ts">
-type HeaderOption = {
-  label: string;
-  url?: string;
-  id: string;
-  hiddeBreakPoint: number
-}
 
-const options: HeaderOption[] = [
-  {
-    label: 'Home',
-    id: 'home',
-    hiddeBreakPoint: 500
-  },
-  {
-    label: 'Shop',
-    id: 'shop',
-    hiddeBreakPoint: 500
-  },
-  {
-    label: 'Pages',
-    id: 'pages',
-    hiddeBreakPoint: 500
-  },
-  {
-    label: 'Blog',
-    id: 'blog',
-    hiddeBreakPoint: 900
-  },
-  {
-    label: 'About',
-    id: 'about',
-    hiddeBreakPoint: 1050
-  },
-  {
-    label: 'Contact',
-    id: 'contact',
-    hiddeBreakPoint: 1050
-  },
-]
+import type {HeaderOption} from "~/layouts/default.vue";
+
+const {options} = defineProps<{ options: HeaderOption[] }>()
+
 
 const pageWidth = ref<number>(0);
 
@@ -75,7 +41,7 @@ onUnmounted(() => {
     <div class=" layout-middle max-xs:px-2 text-white flex justify-between w-full">
       <template v-if="500 < pageWidth">
         <div class="flex items-center  gap-[32px]">
-          <div v-for="opt in visibleElements" :key="opt.id" class="">
+          <div v-for="opt in visibleElements" :key="opt.id" class="cursor-pointer">
             {{ opt.label }}
           </div>
           <UiUiButtonDropdown v-if="hiddenElements.length !== 0"
@@ -102,7 +68,6 @@ onUnmounted(() => {
       </template>
       <template v-else>
         <div class="flex items-center">
-          Menu
           <span class="material-symbols-outlined">
             menu
           </span>
