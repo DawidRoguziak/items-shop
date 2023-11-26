@@ -42,7 +42,7 @@ const options: HeaderOption[] = [
   },
 ];
 
-const isMobileMenuOpen = ref(true);
+const isMobileMenuOpen = ref(false);
 const onToggleMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
 }
