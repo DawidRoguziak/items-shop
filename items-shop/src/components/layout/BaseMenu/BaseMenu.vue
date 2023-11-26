@@ -2,17 +2,18 @@
 
 import type {HeaderOption} from "~/layouts/default.vue";
 
-const {options} = defineProps<{ options: HeaderOption[] }>()
-
+const props = withDefaults(defineProps<{ options: HeaderOption[] }>(), {
+  options: () => []
+});
 
 const pageWidth = ref<number>(0);
 
 const visibleElements = computed(() => {
-  return [...options].filter(opt => opt.hiddeBreakPoint < pageWidth.value)
+  return [...props.options].filter(opt => opt.hiddeBreakPoint < pageWidth.value)
 });
 
 const hiddenElements = computed(() => {
-  return [...options].filter(opt => pageWidth.value < opt.hiddeBreakPoint)
+  return [...props.options].filter(opt => pageWidth.value < opt.hiddeBreakPoint)
       .map(opt => ({value: opt.label, label: opt.label}))
 });
 

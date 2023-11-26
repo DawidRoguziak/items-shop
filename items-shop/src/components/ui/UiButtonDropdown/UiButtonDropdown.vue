@@ -11,7 +11,9 @@ export type DropdownOptions = {
   options?: DropDownOption[];
 }
 
-const {options = []} = defineProps<DropdownOptions>();
+const props = withDefaults(defineProps<DropdownOptions>(), {
+  options: () => []
+});
 const emit = defineEmits<{
   optionClicked: [option: unknown]
 }>()
