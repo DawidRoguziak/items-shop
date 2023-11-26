@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     image: {
         domains: ['127.0.0.1:8090']
     },
-    css: ['~/assets/css/base.css'],
+    css: ['~/assets/css/base.css', '~/assets/scss/common.scss'],
     postcss: {
         plugins: {
             tailwindcss: {},

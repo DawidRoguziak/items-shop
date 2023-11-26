@@ -50,7 +50,7 @@ const close = () => {
 </script>
 
 <template>
-  <div v-if="isRendered" class="fixed base-drawer h-full w-[0px] overflow-hidden"
+  <div v-if="isRendered" class="fixed base-drawer h-full w-[0px] overflow-hidden shadow shadow-gray-400"
        :class="[sizeClass, {'left-0': direction === 'left', 'right-0': direction === 'right'}]">
     <div class="w-full  whitespace-nowrap">
       <slot :close="close">

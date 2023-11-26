@@ -45,7 +45,7 @@ const onOptionClick = (value: unknown) => {
         <ul class="rounded">
           <li v-for="{label, value} in options" :key="'dropdown-id-' + label"
               @click="onOptionClick(value)"
-              class="hover:bg-shopSoftPrimary px-2 py-1 text-black hover:text-white cursor-pointer">
+              class="px-2 py-1 text-black hover-interactive-element">
             {{ label }}
           </li>
         </ul>

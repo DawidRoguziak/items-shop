@@ -6,6 +6,10 @@ const props = withDefaults(defineProps<{ options: HeaderOption[] }>(), {
   options: () => []
 });
 
+const emit = defineEmits<{
+  toggleMobileMenu: []
+}>();
+
 const pageWidth = ref<number>(0);
 
 const visibleElements = computed(() => {
@@ -25,6 +29,10 @@ const onOptionClick = (option: unknown) => {
   console.log(option)
 }
 
+const toggleMobileMenu = () => {
+  emit('toggleMobileMenu')
+}
+
 onMounted(() => {
   pageWidth.value = window.innerWidth;
   window.addEventListener('resize', onPageResize)
@@ -42,7 +50,7 @@ onUnmounted(() => {
     <div class=" layout-middle max-xs:px-2 text-white flex justify-between w-full">
       <template v-if="500 < pageWidth">
         <div class="flex items-center  gap-[32px]">
-          <div v-for="opt in visibleElements" :key="opt.id" class="cursor-pointer">
+          <div v-for="opt in visibleElements" :key="opt.id" class="hover-interactive-element py-1 px-2 rounded">
             {{ opt.label }}
           </div>
           <UiUiButtonDropdown v-if="hiddenElements.length !== 0"
@@ -68,7 +76,7 @@ onUnmounted(() => {
         </div>
       </template>
       <template v-else>
-        <div class="flex items-center">
+        <div class="flex items-center" @click="toggleMobileMenu">
           <span class="material-symbols-outlined">
             menu
           </span>

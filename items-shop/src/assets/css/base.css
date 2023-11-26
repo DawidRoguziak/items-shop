@@ -19,7 +19,3 @@ html, body {
 .base-drop-shadow {
     box-shadow: rgba(14, 107, 21, 0.16) 0px 1px 4px;
 }
-
-.material-symbols-outlined {
-    font-size: 1.50rem;
-}

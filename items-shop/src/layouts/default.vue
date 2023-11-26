@@ -42,9 +42,9 @@ const options: HeaderOption[] = [
   },
 ];
 
-const isDrawerOpen = ref(false);
-const openDrawer = () => {
-  isDrawerOpen.value = !isDrawerOpen.value;
+const isMobileMenuOpen = ref(true);
+const onToggleMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value;
 }
 
 </script>
@@ -52,24 +52,28 @@ const openDrawer = () => {
 <template>
   <div class="relative">
     <div></div>
-    <BaseMenu class="sticky top-0" :options="options"/>
+    <BaseMenu class="sticky top-0 z-50" :options="options" @toggle-mobile-menu="onToggleMenu"/>
     <main class="layout-base relative">
-      <BaseDrawer v-model:is-open="isDrawerOpen" render class="top-[56px] bg-white shadow-orange-300"  size="small">
+      <BaseDrawer v-model:is-open="isMobileMenuOpen" render class="top-[56px] bg-white shadow-orange-300" size="small">
         <template v-slot:default="{close}">
-        contnet
-        <span class="material-symbols-outlined" @click="close">
-          close
-        </span>
+            <div>
+              <div v-for="opt in options" :key="opt.id" class="flex items-center p-5 border-b-shopGray-300/40 border-b hover-interactive-element">
+                {{ opt.label }}
+              </div>
+              <div class="p-5 flex justify-center items-center text-red-500" @click="close">
+                Close
+              </div>
+            </div>
         </template>
       </BaseDrawer>
       <div class="layout-left"></div>
       <div class="layout-middle">
-        <button @click="openDrawer">test</button>
-        <slot></slot>
+        <slot>
+        </slot>
       </div>
       <div class="layout-right"></div>
     </main>
-    <div>footer</div>
+    <div></div>
   </div>
 </template>
 
