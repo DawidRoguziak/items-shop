@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         }
     },
     devServer: {
-      port: 3030,
+        port: 3030,
     },
     srcDir: 'src',
     devtools: {enabled: true},
@@ -21,6 +21,17 @@ export default defineNuxtConfig({
         },
     },
     modules: [
+        '@nuxtjs/i18n',
         '@nuxt/image',
     ],
+    i18n: {
+        strategy: 'prefix',
+        legacy: false,
+        langDir: 'langs',
+        defaultLocale: 'en',
+        locales: [
+            {code: 'en', iso: 'en-US', file: 'en-US.json'},
+            {code: 'pl', iso: 'pl-PL', file: 'pl-PL.json'},
+        ],
+    }
 })
