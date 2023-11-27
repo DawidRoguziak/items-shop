@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import type {HeaderOption} from "~/layouts/default.vue";
+import UiButtonDropdown from "~/components/ui/UiButtonDropdown/UiButtonDropdown.vue";
 
 const props = withDefaults(defineProps<{ options: HeaderOption[] }>(), {
   options: () => []
@@ -51,20 +52,21 @@ onUnmounted(() => {
       <template v-if="500 < pageWidth">
         <div class="flex items-center  gap-[32px]">
           <div v-for="opt in visibleElements" :key="opt.id" class="hover-interactive-element py-1 px-2 rounded">
-            {{ opt.label }}
+            <span class="capitalize">{{ $t(opt.label) }}</span>
           </div>
-          <UiUiButtonDropdown v-if="hiddenElements.length !== 0"
-                              class="max-[500px]:hidden"
-                              :options="hiddenElements"
-                              @option-clicked="onOptionClick"
+          <UiButtonDropdown v-if="hiddenElements.length !== 0"
+                            class="max-[500px]:hidden"
+                            li-classes="capitalize"
+                            :options="hiddenElements"
+                            @option-clicked="onOptionClick"
           >
             <div class="flex items-center">
-              More
+              <span class="capitalize">{{ $t('more') }}</span>
               <span class="material-symbols-outlined">
                 expand_more
               </span>
             </div>
-          </UiUiButtonDropdown>
+          </UiButtonDropdown>
         </div>
         <div>
           <span class="max-[500px]:hidden flex items-center">

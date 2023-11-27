@@ -1,3 +1,9 @@
 {
-  "welcome": "Cześć"
+  "home": "home",
+  "shop": "sklep",
+  "pages": "strony",
+  "blog": "blog",
+  "about": "O nas",
+  "contact": "Kontakt",
+  "more": "Więcej"
 }

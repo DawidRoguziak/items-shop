@@ -11,8 +11,6 @@ const products = ref<Product[]>([]);
 </script>
 <template>
   <div>
-    {{ $t('welcome') }}
-
     <NuxtImg format="avif,webp" src="Logo.png" sizes="xs:30vw sm:40vw md:50vw" ></NuxtImg>
   </div>
 </template>

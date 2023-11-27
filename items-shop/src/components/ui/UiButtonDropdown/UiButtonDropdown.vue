@@ -9,11 +9,14 @@ export type DropDownOption = {
 
 export type DropdownOptions = {
   options?: DropDownOption[];
+  liClasses?: string;
 }
 
 const props = withDefaults(defineProps<DropdownOptions>(), {
-  options: () => []
+  options: () => [],
+  liClasses: '',
 });
+
 const emit = defineEmits<{
   optionClicked: [option: unknown]
 }>()
@@ -45,8 +48,8 @@ const onOptionClick = (value: unknown) => {
         <ul class="rounded">
           <li v-for="{label, value} in options" :key="'dropdown-id-' + label"
               @click="onOptionClick(value)"
-              class="px-2 py-1 text-black hover-interactive-element">
-            {{ label }}
+              class="px-2 py-1 text-black hover-interactive-element" :class="liClasses">
+            {{ $t(label) }}
           </li>
         </ul>
       </slot>
