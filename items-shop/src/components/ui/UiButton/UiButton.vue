@@ -1,9 +1,10 @@
 <script setup lang="ts">
-
+defineProps({
+})
 </script>
 
 <template>
-  <button class="flex items-center cursor-pointer justify-center btn primary primary--reverse normal">
+  <button class="flex items-center cursor-pointer justify-center btn primary primary--ghost normal">
     <slot/>
   </button>
 </template>

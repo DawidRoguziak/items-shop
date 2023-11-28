@@ -11,7 +11,7 @@ const onToggleMenu = () => {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative font-medium">
     <div></div>
     <BaseMenu class="sticky top-0 z-50" :options="headerOptions" @toggle-mobile-menu="onToggleMenu"/>
     <main class="layout-base relative">
