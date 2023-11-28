@@ -2,6 +2,7 @@
 import BaseMenu from "~/components/layout/BaseMenu/BaseMenu.vue";
 import BaseDrawer from "~/components/layout/BaseDrawer/BaseDrawer.vue";
 import {headerOptions} from "~/data/headerOptions";
+import MenuSearchBar from "~/components/layout/MenuSearchBar/MenuSearchBar.vue";
 
 const isMobileMenuOpen = ref(false);
 const onToggleMenu = () => {
@@ -13,6 +14,7 @@ const onToggleMenu = () => {
 <template>
   <div class="relative font-medium">
     <div></div>
+    <MenuSearchBar />
     <BaseMenu class="sticky top-0 z-50" :options="headerOptions" @toggle-mobile-menu="onToggleMenu"/>
     <main class="layout-base relative">
       <BaseDrawer v-model:is-open="isMobileMenuOpen" render class="top-[56px] bg-white shadow-orange-300" size="small">
