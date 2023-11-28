@@ -17,14 +17,9 @@ const {data} = await useFetch<BaseApiListResponse<Product>>(useGetApiLink('produ
     <div>&nbsp;</div>
 
     <div class="ui-button-group">
-      <UiInput label="Email" name="navigationSearch">
+      <UiInput label="Search" name="navigationSearch">
         <template #iconStart>
           <span class="material-symbols-outlined text-2xl">
-            search
-          </span>
-        </template>
-        <template #iconEnd>
-          <span class="material-symbols-outlined">
             search
           </span>
         </template>

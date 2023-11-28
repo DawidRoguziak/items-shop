@@ -33,7 +33,7 @@ const slots = useSlots();
   $self: &;
   @apply relative w-fit focus-within:border-shopPrimary
   px-[16px] py-[14px] border-[1px] flex align-middle rounded
-  border-shopGray-100 bg-white max-h-[49px];
+  border-shopGray-100 bg-white;
 
   &__input {
     @apply
@@ -43,16 +43,10 @@ const slots = useSlots();
 
   :deep(#{$self}__icon-start) {
     @apply flex align-middle items-center mr-2;
-    .material-symbols-outlined {
-      @apply text-[14px];
-    }
   }
 
   :deep(#{$self}__icon-end) {
     @apply flex align-middle items-center ml-2;
-    .material-symbols-outlined {
-      @apply text-[14px];
-    }
   }
 
   &--success {
