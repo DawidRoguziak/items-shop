@@ -13,7 +13,7 @@ const {data} = await useFetch<BaseApiListResponse<Product>>(useGetApiLink('produ
 <template>
   <div>
 
-    <UiButton size="medium" ghost>
+    <UiButton size="medium">
       Search
     </UiButton>
 

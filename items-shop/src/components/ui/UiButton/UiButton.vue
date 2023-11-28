@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
 type UiButton = {
-  size: 'normal' | 'medium' | 'large',
-  color: 'primary',
-  reverse: boolean,
-  ghost: boolean,
+  size?: 'normal' | 'medium' | 'large',
+  color?: 'primary',
+  reverse?: boolean,
+  ghost?: boolean,
 }
 
 const props = withDefaults(defineProps<UiButton>(), {
