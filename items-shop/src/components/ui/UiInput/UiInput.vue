@@ -17,9 +17,12 @@ const slots = useSlots();
 </script>
 <template>
   <div class="ui-input" :class="['ui-input--' + color]">
+    <div v-if="slots.iconStart" class="ui-input__icon-start">
+      <slot name="iconStart"/>
+    </div>
     <input :name="name" :id="name" class="ui-input__input" :placeholder="label" :type="type">
     <div v-if="slots.iconEnd" class="ui-input__icon-end">
-      <slot name="iconEnd" />
+      <slot name="iconEnd"/>
     </div>
   </div>
 </template>
@@ -28,15 +31,28 @@ const slots = useSlots();
 
 .ui-input {
   $self: &;
-  @apply relative w-fit;
+  @apply relative w-fit focus-within:border-shopPrimary
+  px-[16px] py-[14px] border-[1px] flex align-middle rounded
+  border-shopGray-100 bg-white max-h-[49px];
 
   &__input {
-    @apply px-[16px] py-[14px] border-[1px] flex align-middle rounded
+    @apply
     placeholder-shopGray-400
-    border-shopGray-100 bg-white font-normal text-md focus:border-shopPrimary outline-0;
+    font-normal text-[14px]  outline-0;
   }
-  &__icon-end {
-    @apply absolute top-1/2 -translate-y-1/2 right-2
+
+  :deep(#{$self}__icon-start) {
+    @apply flex align-middle items-center mr-2;
+    .material-symbols-outlined {
+      @apply text-[14px];
+    }
+  }
+
+  :deep(#{$self}__icon-end) {
+    @apply flex align-middle items-center ml-2;
+    .material-symbols-outlined {
+      @apply text-[14px];
+    }
   }
 
   &--success {
