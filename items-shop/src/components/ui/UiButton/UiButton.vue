@@ -30,7 +30,7 @@ const getAdditionalClasses = () => {
 </script>
 
 <template>
-  <button class="flex items-center cursor-pointer justify-center btn"
+  <button class="flex items-center cursor-pointer justify-center ui-btn"
           :class="[size,color, ...getAdditionalClasses()]"
   >
     <slot/>
@@ -38,7 +38,7 @@ const getAdditionalClasses = () => {
 </template>
 
 <style lang="scss" scoped>
-.btn {
+.ui-btn {
   &.normal {
     @apply px-[24px] py-[10px] text-sm leading-4;
   }

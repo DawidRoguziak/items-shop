@@ -4,6 +4,7 @@ import useGetApiLink from '~/composables/useGetApiLink';
 import type {Product} from "../../../types/Product";
 import type {BaseApiListResponse} from "../../../types/BaseApiListResponse";
 import UiButton from "~/components/ui/UiButton/UiButton.vue";
+import UiInput from "~/components/ui/UiInput/UiInput.vue";
 
 const products = ref<Product[]>([]);
 
@@ -12,14 +13,20 @@ const {data} = await useFetch<BaseApiListResponse<Product>>(useGetApiLink('produ
 </script>
 <template>
   <div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
 
-    <UiButton size="medium">
-      Search
-    </UiButton>
+    <div class="ui-button-group">
+      <UiInput label="Email" name="navigationSearch">
+      </UiInput>
+      <UiButton size="medium">
+        Search
+      </UiButton>
+    </div>
 
-    <div></div>
-    <div></div>
-    <div></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
 
     <NuxtImg format="avif,webp" src="Logo.png" sizes="xs:30vw sm:40vw md:50vw"></NuxtImg>
   </div>
