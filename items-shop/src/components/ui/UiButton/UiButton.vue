@@ -1,10 +1,38 @@
 <script setup lang="ts">
-defineProps({
-})
+
+type UiButton = {
+  size: 'normal' | 'medium' | 'large',
+  color: 'primary',
+  reverse: boolean,
+  ghost: boolean,
+}
+
+const props = withDefaults(defineProps<UiButton>(), {
+  size: 'normal',
+  color: 'primary',
+  reverse: false,
+  ghost: false
+});
+
+const getAdditionalClasses = () => {
+  const classes = [];
+  if (props.ghost) {
+    classes.push(`${props.color}--ghost`);
+  }
+
+  if (props.reverse) {
+    classes.push(`${props.color}--reverse`);
+  }
+
+  return classes;
+}
+
 </script>
 
 <template>
-  <button class="flex items-center cursor-pointer justify-center btn primary primary--ghost normal">
+  <button class="flex items-center cursor-pointer justify-center btn"
+          :class="[size,color, ...getAdditionalClasses()]"
+  >
     <slot/>
   </button>
 </template>
