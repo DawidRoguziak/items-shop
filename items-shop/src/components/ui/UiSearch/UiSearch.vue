@@ -4,7 +4,8 @@ import UiInput from "~/components/ui/UiInput/UiInput.vue";
 import UiButton from "~/components/ui/UiButton/UiButton.vue";
 
 type UiSearch = {
-  name: string
+  name: string,
+  label?: string
 }
 
 withDefaults(defineProps<UiSearch>(), {})
@@ -13,9 +14,9 @@ withDefaults(defineProps<UiSearch>(), {})
 
 <template>
   <div class="flex items-stretch">
-    <UiInput label="Search" :name="name" class="rounded-r-none">
+    <UiInput :name="name" :label="label" class="rounded-r-none w-full">
       <template #iconStart>
-        <span class="material-symbols-outlined text-2xl">
+        <span class="material-symbols-outlined text-3xl">
           search
         </span>
       </template>

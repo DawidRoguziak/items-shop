@@ -73,7 +73,7 @@ onUnmounted(() => {
             <span class="material-symbols-outlined mr-0.5">
               phone_in_talk
             </span>
-            (219) 555-0114
+            <span class="whitespace-nowrap">(219) 555-0114</span>
           </span>
         </div>
       </template>
