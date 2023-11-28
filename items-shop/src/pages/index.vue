@@ -3,8 +3,7 @@
 import useGetApiLink from '~/composables/useGetApiLink';
 import type {Product} from "../../../types/Product";
 import type {BaseApiListResponse} from "../../../types/BaseApiListResponse";
-import UiButton from "~/components/ui/UiButton/UiButton.vue";
-import UiInput from "~/components/ui/UiInput/UiInput.vue";
+import UiSearch from "~/components/ui/UiSearch/UiSearch.vue";
 
 const products = ref<Product[]>([]);
 
@@ -15,20 +14,7 @@ const {data} = await useFetch<BaseApiListResponse<Product>>(useGetApiLink('produ
   <div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>
-
-    <div class="ui-button-group">
-      <UiInput label="Search" name="navigationSearch">
-        <template #iconStart>
-          <span class="material-symbols-outlined text-2xl">
-            search
-          </span>
-        </template>
-      </UiInput>
-      <UiButton size="medium">
-        Search
-      </UiButton>
-    </div>
-
+      <UiSearch name="navigationSearch" />
     <div>&nbsp;</div>
     <div>&nbsp;</div>
     <div>&nbsp;</div>

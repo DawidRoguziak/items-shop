@@ -30,7 +30,7 @@ const getAdditionalClasses = () => {
 </script>
 
 <template>
-  <button class="flex items-center cursor-pointer justify-center ui-btn"
+  <button class="flex items-center cursor-pointer justify-center ui-btn bg-shopPrimary text-shopGray-50 rounded-full hover:bg-shopHardPrimary"
           :class="[size,color, ...getAdditionalClasses()]"
   >
     <slot/>
@@ -52,8 +52,6 @@ const getAdditionalClasses = () => {
   }
 
   &.primary {
-    @apply bg-shopPrimary text-shopGray-50 rounded-full hover:bg-shopHardPrimary;
-
     &--ghost {
       @apply text-shopPrimary;
       &:hover {

@@ -16,7 +16,10 @@ const slots = useSlots();
 
 </script>
 <template>
-  <div class="ui-input" :class="['ui-input--' + color]">
+  <div class="ui-input relative w-fit focus-within:border-shopPrimary
+  px-[16px] py-[14px] border-[1px] flex align-middle rounded-lg
+  border-shopGray-100 bg-white"
+       :class="['ui-input--' + color]">
     <div v-if="slots.iconStart" class="ui-input__icon-start">
       <slot name="iconStart"/>
     </div>
@@ -31,13 +34,9 @@ const slots = useSlots();
 
 .ui-input {
   $self: &;
-  @apply relative w-fit focus-within:border-shopPrimary
-  px-[16px] py-[14px] border-[1px] flex align-middle rounded
-  border-shopGray-100 bg-white;
 
   &__input {
-    @apply
-    placeholder-shopGray-400
+    @apply placeholder-shopGray-400
     font-normal text-[14px]  outline-0;
   }
 
