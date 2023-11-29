@@ -14,8 +14,8 @@ const onToggleMenu = () => {
 <template>
   <div class="relative font-medium">
     <div></div>
-    <MenuSearchBar />
-    <BaseMenu class="sticky top-0 z-50" :options="headerOptions" @toggle-mobile-menu="onToggleMenu"/>
+    <MenuSearchBar class="z-10" />
+    <BaseMenu class="sticky top-0 z-10" :options="headerOptions" @toggle-mobile-menu="onToggleMenu"/>
     <main class="layout-base relative">
       <BaseDrawer v-model:is-open="isMobileMenuOpen" render class="top-[56px] bg-white shadow-orange-300" size="small">
         <template v-slot:default="{close}">

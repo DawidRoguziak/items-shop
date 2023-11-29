@@ -1,4 +1,4 @@
-export default (api: string): string => {
+export default (url: string): string => {
     const rc = useRuntimeConfig();
-    return `${rc.public.baseURL}/products`;
+    return `${rc.public.baseURL}${url}`;
 }

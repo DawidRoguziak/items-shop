@@ -13,7 +13,7 @@ export class ProductsController {
 
     @Get()
     async list(@Req() request: Request) {
-
+        console.log(request)
         const records = await this.productService.getList();
 
         return {records};
