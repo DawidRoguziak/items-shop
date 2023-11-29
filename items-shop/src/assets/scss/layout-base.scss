@@ -3,13 +3,13 @@
 }
 
 @mixin layoutBaseLeft {
-  @apply lg:w-3/12 md:w-2/12 sm:w-1/12 max-xs:w-0;
+  @apply xl:w-2/12 lg:w-1/12 md:w-2/12 sm:w-1/12 max-xs:w-0;
 }
 
 @mixin layoutBaseRight {
-  @apply lg:w-3/12 md:w-2/12 sm:w-1/12 max-xs:w-0;
+  @apply xl:w-2/12 lg:w-1/12 md:w-2/12 sm:w-1/12 max-xs:w-0;
 }
 
 @mixin layoutBaseMiddle {
-  @apply lg:w-6/12 md:w-8/12 sm:w-10/12 max-xs:w-full;
+  @apply xl:w-8/12 lg:w-10/12 md:w-8/12 sm:w-10/12 max-xs:w-full;
 }

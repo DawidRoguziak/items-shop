@@ -30,7 +30,8 @@ const getAdditionalClasses = () => {
 </script>
 
 <template>
-  <button class="flex items-center cursor-pointer justify-center ui-btn bg-shopPrimary text-shopGray-50 rounded-full hover:bg-shopHardPrimary"
+  <button class="flex items-center cursor-pointer justify-center
+  ui-btn bg-shopPrimary text-shopGray-50 rounded-full hover:bg-shopHardPrimary"
           :class="[size,color, ...getAdditionalClasses()]"
   >
     <slot/>

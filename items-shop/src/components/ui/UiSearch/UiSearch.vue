@@ -22,7 +22,7 @@ withDefaults(defineProps<UiSearch>(), {})
       </template>
     </UiInput>
     <UiButton size="medium" class="rounded-l-none rounded-r-lg">
-      Search
+      {{ label }}
     </UiButton>
   </div>
 </template>
