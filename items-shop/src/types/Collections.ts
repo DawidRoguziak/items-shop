@@ -1,4 +1,4 @@
-import {CollectionProducts} from "../../../collections/products";
+import {CollectionProducts} from "~/collections/products";
 
 
 export type Collections = CollectionProducts.collectionType;

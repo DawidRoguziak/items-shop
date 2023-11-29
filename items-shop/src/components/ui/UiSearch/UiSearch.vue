@@ -13,6 +13,10 @@ withDefaults(defineProps<UiSearch>(), {
   items: () => [],
 });
 
+const emit = defineEmits<{
+  search: []
+}>()
+
 </script>
 
 <template>
@@ -34,7 +38,7 @@ withDefaults(defineProps<UiSearch>(), {
         </template>
       </div>
     </div>
-    <UiButton size="medium" class="rounded-l-none rounded-r-lg">
+    <UiButton @click="emit('search')" size="medium" class="rounded-l-none rounded-r-lg">
       {{ label }}
     </UiButton>
   </div>
