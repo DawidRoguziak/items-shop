@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 type ProductCategory = {
   id: string;
   name: string;
@@ -9,8 +11,8 @@ type ProductAdditionalInfo = {
 
 export type Product = {
   id: string;
-  created: Date;
-  updated: Date;
+  created: dayjs.Dayjs;
+  updated: dayjs.Dayjs;
   name: string;
   image: string[];
   brand:  string;
@@ -22,8 +24,8 @@ export type Product = {
   priceAfterDiscount: number;
   percentDiscountValue: number;
   quantity: number;
-  discountStartDate: Date;
-  discountEndDate: Date;
+  discountStartDate: dayjs.Dayjs;
+  discountEndDate: dayjs.Dayjs;
   avgRating: number;
   description: string;
   additionalInfo: ProductAdditionalInfo;

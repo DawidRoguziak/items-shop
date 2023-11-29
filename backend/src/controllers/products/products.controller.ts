@@ -16,7 +16,7 @@ export class ProductsController {
         console.log(request)
         const records = await this.productService.getList();
 
-        return {records};
+        return {...records};
     }
 
 }
